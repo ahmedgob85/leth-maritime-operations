@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocumentsRouteImport } from './routes/documents'
+import { Route as DriversRouteImport } from './routes/drivers'
+import { Route as ExpensesRouteImport } from './routes/expenses'
+import { Route as GpsTrackingRouteImport } from './routes/gps-tracking'
+import { Route as MaintenanceRouteImport } from './routes/maintenance'
+import { Route as MovementsRouteImport } from './routes/movements'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TripsRouteImport } from './routes/trips'
+import { Route as UsersRouteImport } from './routes/users'
+import { Route as VehiclesRouteImport } from './routes/vehicles'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriversRoute = DriversRouteImport.update({
+  id: '/drivers',
+  path: '/drivers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpensesRoute = ExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GpsTrackingRoute = GpsTrackingRouteImport.update({
+  id: '/gps-tracking',
+  path: '/gps-tracking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaintenanceRoute = MaintenanceRouteImport.update({
+  id: '/maintenance',
+  path: '/maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MovementsRoute = MovementsRouteImport.update({
+  id: '/movements',
+  path: '/movements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsRoute = TripsRouteImport.update({
+  id: '/trips',
+  path: '/trips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsersRoute = UsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VehiclesRoute = VehiclesRouteImport.update({
+  id: '/vehicles',
+  path: '/vehicles',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/documents': typeof DocumentsRoute
+  '/drivers': typeof DriversRoute
+  '/expenses': typeof ExpensesRoute
+  '/gps-tracking': typeof GpsTrackingRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/movements': typeof MovementsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/trips': typeof TripsRoute
+  '/users': typeof UsersRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/documents': typeof DocumentsRoute
+  '/drivers': typeof DriversRoute
+  '/expenses': typeof ExpensesRoute
+  '/gps-tracking': typeof GpsTrackingRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/movements': typeof MovementsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/trips': typeof TripsRoute
+  '/users': typeof UsersRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/documents': typeof DocumentsRoute
+  '/drivers': typeof DriversRoute
+  '/expenses': typeof ExpensesRoute
+  '/gps-tracking': typeof GpsTrackingRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/movements': typeof MovementsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/trips': typeof TripsRoute
+  '/users': typeof UsersRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/documents'
+    | '/drivers'
+    | '/expenses'
+    | '/gps-tracking'
+    | '/maintenance'
+    | '/movements'
+    | '/reports'
+    | '/settings'
+    | '/trips'
+    | '/users'
+    | '/vehicles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/documents'
+    | '/drivers'
+    | '/expenses'
+    | '/gps-tracking'
+    | '/maintenance'
+    | '/movements'
+    | '/reports'
+    | '/settings'
+    | '/trips'
+    | '/users'
+    | '/vehicles'
+  id:
+    | '__root__'
+    | '/'
+    | '/documents'
+    | '/drivers'
+    | '/expenses'
+    | '/gps-tracking'
+    | '/maintenance'
+    | '/movements'
+    | '/reports'
+    | '/settings'
+    | '/trips'
+    | '/users'
+    | '/vehicles'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DocumentsRoute: typeof DocumentsRoute
+  DriversRoute: typeof DriversRoute
+  ExpensesRoute: typeof ExpensesRoute
+  GpsTrackingRoute: typeof GpsTrackingRoute
+  MaintenanceRoute: typeof MaintenanceRoute
+  MovementsRoute: typeof MovementsRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  TripsRoute: typeof TripsRoute
+  UsersRoute: typeof UsersRoute
+  VehiclesRoute: typeof VehiclesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drivers': {
+      id: '/drivers'
+      path: '/drivers'
+      fullPath: '/drivers'
+      preLoaderRoute: typeof DriversRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expenses': {
+      id: '/expenses'
+      path: '/expenses'
+      fullPath: '/expenses'
+      preLoaderRoute: typeof ExpensesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gps-tracking': {
+      id: '/gps-tracking'
+      path: '/gps-tracking'
+      fullPath: '/gps-tracking'
+      preLoaderRoute: typeof GpsTrackingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maintenance': {
+      id: '/maintenance'
+      path: '/maintenance'
+      fullPath: '/maintenance'
+      preLoaderRoute: typeof MaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/movements': {
+      id: '/movements'
+      path: '/movements'
+      fullPath: '/movements'
+      preLoaderRoute: typeof MovementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips': {
+      id: '/trips'
+      path: '/trips'
+      fullPath: '/trips'
+      preLoaderRoute: typeof TripsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/users': {
+      id: '/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof UsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vehicles': {
+      id: '/vehicles'
+      path: '/vehicles'
+      fullPath: '/vehicles'
+      preLoaderRoute: typeof VehiclesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DocumentsRoute: DocumentsRoute,
+  DriversRoute: DriversRoute,
+  ExpensesRoute: ExpensesRoute,
+  GpsTrackingRoute: GpsTrackingRoute,
+  MaintenanceRoute: MaintenanceRoute,
+  MovementsRoute: MovementsRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  TripsRoute: TripsRoute,
+  UsersRoute: UsersRoute,
+  VehiclesRoute: VehiclesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

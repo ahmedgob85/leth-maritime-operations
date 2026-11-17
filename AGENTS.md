@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- All UI text lives in `src/lib/i18n-dictionary.ts` (English + Arabic, same shape, enforced by `src/test/i18n.test.ts`); components read it via `useI18n()` so both languages stay complete.
+- Use logical Tailwind utilities (`ms-`, `pe-`, `start-`, `text-start`, `rtl:`) instead of left/right so layouts flip correctly in RTL.
+- Main navigation is defined once in `src/lib/navigation.ts`; each entry needs a matching route file (covered by `src/test/app-routing.test.tsx`).
+- Unbuilt modules render `ModulePage` (honest "not available" state); replace it per route when the module is implemented.
